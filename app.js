@@ -57,10 +57,12 @@ function errorHandler(err, req, res, next) {
 }
 
 console.log(__dirname);
-
+try{
 app.get('/', routes.index);
 app.get('/users', user.list);
-
+}catch(e){
+	
+}
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));
 });
